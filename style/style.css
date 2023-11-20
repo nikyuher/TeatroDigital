@@ -1,0 +1,10 @@
+.contOpciones {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(73, 14, 14);
+}
+
+.contOpciones nav a {
+    color: white;
+    text-decoration: none;
+}
