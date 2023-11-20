@@ -8,3 +8,12 @@
     color: white;
     text-decoration: none;
 }
+.contCategorias{
+    display: flex;
+    justify-content:space-around ;
+}
+.cajaIndex{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
