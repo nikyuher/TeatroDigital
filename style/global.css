@@ -15,6 +15,10 @@ img {
     font-family: 'Denk One', sans-serif;
     padding:10px 20px ;
 }
+.logo a{
+    text-decoration: none;
+    color: white;
+}
 /*Barra de Navegacion*/
 .contOpciones {
     display: flex;
