@@ -3,22 +3,10 @@ img {
     object-fit: contain;
     width: 100%;
 }
-
-.letraTamañoH1 h1 {
-    font-size: 50px;
-    text-align: left;
-    color: white;
-    font-family: 'Agbalumo', serif;
+main{
+    background-color: rgb(129, 129, 129);
 }
-
-.letraTextoGeneral {
-    font-family: 'Ubuntu Condensed', serif;
-}
-
-.letraFooter * {
-    font-family: monospace;
-}
-
+/*Logo*/
 .colorFooter * {
     color: rgb(255, 255, 255);
 }
@@ -32,8 +20,26 @@ img {
     text-decoration: none;
     color: white;
 }
-main{
-    background-color: aqua;
+/*Textos Generales*/
+.letraTextoGeneral h1{
+    font-size: 50px;
+    text-align: left;
+    color: white;
+    font-family: 'Agbalumo', serif;
+}
+.letraTextoGeneral h2{
+    font-family: 'Rowdies', sans-serif;
+    color: white;
+    padding-left: 30px;
+    font-size: 40px
+}
+
+.letraTextoGeneral{
+    font-family: 'Ubuntu Condensed', serif;
+}
+/*Textos Footer*/
+.letraFooter * {
+    font-family: monospace;
 }
 /*Barra de Navegacion*/
 .contOpciones {
