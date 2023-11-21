@@ -1,23 +1,39 @@
 /*Cosas Generales*/
 img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+}
+
+.letraTamañoH1 h1 {
+    font-size: 50px;
+    text-align: left;
+    color: white;
+    font-family: 'Agbalumo', serif;
+}
+
+.letraTextoGeneral {
+    font-family: 'Ubuntu Condensed', serif;
 }
 
 .letraFooter * {
     font-family: monospace;
 }
-.colorFooter *{
-    color: rgb(230, 208, 10);
+
+.colorFooter * {
+    color: rgb(255, 255, 255);
 }
 
-.logo{
+.logo {
     font-family: 'Denk One', sans-serif;
-    padding:10px 20px ;
+    padding: 10px 20px;
 }
-.logo a{
+
+.logo a {
     text-decoration: none;
     color: white;
+}
+main{
+    background-color: aqua;
 }
 /*Barra de Navegacion*/
 .contOpciones {
@@ -32,14 +48,13 @@ img {
 .contOpciones nav a {
     color: white;
     text-decoration: none;
-    padding:20px ;
+    padding: 20px;
 }
 
 /*Footer*/
 .contFooter {
     background-color: rgb(27, 27, 26);
     height: 280px;
-    margin-top: 20px;
     text-align: center;
 }
 
@@ -59,6 +74,7 @@ img {
 .iconosRedes {
     display: flex;
 }
+
 .iconosRedes a {
     width: 100%;
     font-size: 22px;
