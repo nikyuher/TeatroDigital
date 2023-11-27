@@ -10,7 +10,7 @@ img {
     width: 100%;
 }
 main{
-    background-color: rgb(80, 75, 75);
+    background-color: rgb(255, 185, 56);
 }
 /*Logo*/
 .colorFooter * {
@@ -35,7 +35,7 @@ main{
 }
 .letraTextoGeneral h2{
     font-family: 'Rowdies', sans-serif;
-    color: rgb(202, 41, 41);
+    color: rgb(255, 60, 60);
     padding-left: 30px;
     font-size: 40px
 }
