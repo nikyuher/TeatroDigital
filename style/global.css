@@ -11,6 +11,7 @@ img {
 }
 main{
     background-color: rgb(255, 185, 56);
+    padding-bottom: 30px;
 }
 /*Logo*/
 .colorFooter * {
@@ -43,10 +44,7 @@ main{
 .letraTextoGeneral{
     font-family: 'Ubuntu Condensed', serif;
 }
-/*Textos Footer*/
-.letraFooter * {
-    font-family: monospace;
-}
+
 /*Barra de Navegacion*/
 .contOpciones {
     display: flex;
@@ -63,6 +61,10 @@ main{
     padding: 20px;
 }
 
+/*Textos Footer*/
+.letraFooter * {
+    font-family: monospace;
+}
 /*Footer*/
 .contFooter {
     background-color: rgb(27, 27, 26);

@@ -1,0 +1,33 @@
+.contTituloContact {
+    display: grid;
+}
+
+.tituloContact h1 {
+    width: 100%;
+    color: rgb(133, 24, 16)
+}
+
+.imgContact {
+    display: flex;
+    justify-content: center;
+}
+
+.imgContact img {
+    width: 90%;
+    height: 400px;
+}
+
+.contContenidoContact {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.contenidoContact {
+    width: 500px;
+    margin: auto 40px;
+    text-align: left;
+}
+
