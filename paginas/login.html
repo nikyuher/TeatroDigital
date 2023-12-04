@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="../style/login.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
     <header>
-        <h2 class="logo"><a href="index.html">Coffeco</a></h2>
+        <h2 class="logo"><a href="index.html">Teatrum</a></h2>
     </header>
     <article>
         <section>
@@ -21,22 +22,22 @@
                 <div class="form-box login">
                     <h2>Login</h2>
                     <form id="formularioL">
-                        <div class="respuesta2" id="respuestaL"></div>
+                        <div class="respuesta2" id="respuesta2"></div>
                         <div class="input-box">
-                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input type="email" name="" id="correoL" required>
-                            <label>Email</label>
+                            <span class="icon"><ion-icon name="mail" required></ion-icon></span>
+                            <input type="text" name="" id="nombre2" required>
+                            <label>Username</label>
                         </div>
                         <div class="input-box">
                             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                            <input type="password" name="" id="contrasenaL" required>
+                            <input type="password" name="" id="contrasena2" required>
                             <label>Password</label>
                         </div>
                         <div class="remember-forgot">
                             <label><input type="checkbox">Remember me</label>
                             <a href="#">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="btn">Login</button>
+                        <button type="submit" id="login"class="btn">Login</button>
                         <div class="login-register">
                             <p>Don't have an accoount?<a href="#" class="register-link">Register</a></p>
                         </div>
@@ -52,25 +53,20 @@
                             <label>Username</label>
                         </div>
                         <div class="input-box">
-                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                            <input type="email" name="" id="correo" required>
-                            <label>Email</label>
-                        </div>
-                        <div class="input-box">
                             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                            <input type="password" name="" id="contra" required>
+                            <input type="password" name="" id="contrasena" required>
                             <label>Password</label>
                         </div>
                         <div class="remember-forgot">
                             <label><input type="checkbox" required>I agree to the terms & conditions</label>
                         </div>
-                        <button id="enviar" type="submit" class="btn">Register</button>
+                        <button id="register" type="submit" class="btn">Register</button>
                         <div id="mensaje"></div>
                         <div class="login-register">
                             <p>Already have an account?<a href="#" class="login-link">Login</a></p>
                         </div>
                     </form>
-                    <script src="../js/login/login.js"></script>
+                    <script src="../js/login/loginJs/login.js"></script>
                 </div>
             </div>
         </section>

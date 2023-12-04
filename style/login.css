@@ -65,10 +65,10 @@ header{
     font-family: 'Courier New', Courier, monospace;
 }
 .logo a{
-    color: white;
+    color: rgb(238, 45, 45);
 }
 .logo a:hover{
-    color: white;
+    color: rgb(167, 15, 15);
 }
 
 
