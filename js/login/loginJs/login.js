@@ -28,6 +28,10 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 $('#mensaje').text(data.mensaje);
+
+                if (data.mensaje === 'Registro exitoso') {
+                    window.location.href = 'login.html';
+                }
             },
             error: function (error) {
                 console.error('Error:', error);
@@ -51,6 +55,10 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 $('#respuesta2').text(data.mensaje);
+
+                if (data.mensaje === 'Inicio de sesión exitoso') {
+                    window.location.href = '../Index.html';
+                }
             },
             error: function (error) {
                 console.error('Error:', error);
