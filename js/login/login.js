@@ -27,7 +27,7 @@ $(document).ready(function () {
             data: JSON.stringify({ nombre, contrasena }),
             success: function (data) {
                 console.log(data);
-                $('#mensaje').text(data.mensaje);
+                $('#respuesta').text(data.mensaje);
 
                 if (data.mensaje === 'Registro exitoso') {
                     window.location.href = 'login.html';
@@ -53,11 +53,17 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({ nombre: nombre2, contrasena: contrasena2 }),
             success: function (data) {
+
                 console.log(data);
+
                 $('#respuesta2').text(data.mensaje);
 
                 if (data.mensaje === 'Inicio de sesión exitoso') {
+
+                    sessionStorage.setItem('nombreUsuario', data.nombre);
+
                     window.location.href = '../Index.html';
+                    
                 }
             },
             error: function (error) {

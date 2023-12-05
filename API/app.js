@@ -37,7 +37,7 @@ app.post('/api/login', (req, res) => {
     const usuario = usuarios.find(u => u.nombre === nombre && u.contrasena === contrasena);
 
     if (usuario) {
-        res.json({ mensaje: 'Inicio de sesión exitoso' });
+        res.json({ mensaje: 'Inicio de sesión exitoso',nombre:nombre });
     } else {
         res.json({ mensaje: 'Credenciales incorrectas' });
     }
