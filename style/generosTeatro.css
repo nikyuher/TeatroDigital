@@ -16,23 +16,3 @@
     width: 90%;
     height: 400px;
 }
-
-.contenedorGeneros {
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 30px;
-}
-
-.cajaGenero {
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 300px;
-    height: 400px;
-    border: black solid 1px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
-    margin: 40px;
-}
