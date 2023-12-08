@@ -4,43 +4,91 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Middleware para analizar el cuerpo de las solicitudes
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors());
 
-// Almacén temporal de usuarios (en un entorno de producción, usar una base de datos)
+// Almacén temporal 
 const usuarios = [];
+const obrasTeatros = [];
 
-// Endpoint para registrar un nuevo usuario
+// Registrar un nuevo usuario
 app.post('/api/registro', (req, res) => {
     const { nombre, contrasena } = req.body;
 
-    // Verifica si el usuario ya existe
     const usuarioExistente = usuarios.find(u => u.nombre === nombre);
 
     if (usuarioExistente) {
-        res.json({ mensaje: 'El usuario ya existe' });
+        res.json({ mensaje: 'El Usuario ya existe' });
     } else {
-        // Agrega el nuevo usuario al array
         usuarios.push({ nombre, contrasena });
-        res.json({ mensaje: 'Registro exitoso' });
+        res.json({ mensaje: 'Registro Exitoso' });
     }
 });
 
-// Endpoint para iniciar sesión
+//Iniciar sesión
 app.post('/api/login', (req, res) => {
     const { nombre, contrasena } = req.body;
 
-    // Busca el usuario en el array
     const usuario = usuarios.find(u => u.nombre === nombre && u.contrasena === contrasena);
 
     if (usuario) {
-        res.json({ mensaje: 'Inicio de sesión exitoso',nombre:nombre });
+        res.json({ mensaje: 'Inicio de sesión exitoso', nombre: nombre });
     } else {
-        res.json({ mensaje: 'Credenciales incorrectas' });
+        res.json({ mensaje: 'Credenciales Incorrectas' });
     }
+});
+
+//Obras Teatro Anadir
+app.post('/api/obrasTeatro/anadir', (req, res) => {
+    const { genero, imagen, nombre, descripcion, precio } = req.body;
+
+    const obra = obrasTeatros.find(u => u.nombre === nombre);
+
+    if (obra) {
+        res.json({ mensaje: 'La Obra ya existe' });
+    } else {
+        obrasTeatros.push({ genero, imagen, nombre, descripcion, precio });
+        res.json({ mensaje: 'Obra añadida Correctamente' });
+    }
+});
+
+
+//Buscar obras segun el genero
+app.get('/api/obrasTeatro/:genero', (req, res) => {
+    const genero = req.params.genero;
+
+    const obrasPorGenero = obrasTeatros.filter(obra => obra.genero === genero);
+
+    if (obrasPorGenero.length > 0) {
+        res.json({ obrasTeatro: obrasPorGenero });
+    } else {
+        res.json({ mensaje: `No hay obras de teatro del genero ${genero}` });
+    }
+});
+
+//Buscar obra en Especifico
+app.get('/api/obrasTeatro/nombre/:nombre', (req, res) => {
+    const nombre = req.params.nombre;
+
+    const Obra = obrasTeatros.find(obra => obra.nombre === nombre);
+
+    if (Obra) {
+        res.json({
+            imagen: Obra.imagen,
+            nombre: Obra.nombre,
+            descripcion: Obra.descripcion,
+            precio: Obra.precio
+        });
+    } else {
+        res.json({ mensaje: `No existe la obra ${nombre}` });
+    }
+});
+
+//Mostrar Obras Teatro
+app.get('/api/obrasTeatro', (req, res) => {
+    res.json({ obrasTeatros });
 });
 
 // Agrega esta ruta después de las rutas existentes
@@ -48,12 +96,12 @@ app.get('/api/usuarios', (req, res) => {
     res.json({ usuarios });
 });
 
-
+//Muestra los usuarios creados
 app.get('/', (req, res) => {
     res.send('Lanzado Correctamente')
-  })
+})
 
 // Inicia el servidor
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+    console.log(`Servidor lanzado en http://localhost:${port}`);
 });
