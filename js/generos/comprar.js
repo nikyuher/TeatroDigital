@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            $('.contImagenObraPopular').html(`<img src="/imagenes/${data.imagen}" alt="${data.imagen}">`);
+            $('.contImagenObraPopular').html(`<img src="/imagenes/obras/${data.imagen}" alt="${data.imagen}">`);
             $('#tituloObra').text(data.nombre);
             $('#descripcionCompra').text(data.descripcion);
             $('#inputPrecio').val(data.precio);

@@ -3,43 +3,94 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     background-image: url(../imagenes/sala-de-teatro-referencial.jpg);
-    color: white;
     background-repeat: no-repeat;
     background-size: 100% 600px;
-    height: 500px;
+    height: 600px;
     align-items: center;
     text-align: center;
     margin-bottom: 30px;
 }
 
+main {
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 30px;
+}
+
 .descriPopular {
+    color: white;
     text-align: justify;
-    width: 450px;
-    margin: auto;
+    width: 80%;
+    margin: 0 auto 100px auto;
+}
+
+.descriPopular h1{
+    margin-bottom: 50px;
 }
 
 .descriPopular p {
-    font-size: 20px;
+    width: 60%;
+    font-size: 30px;
 }
 
-.contImagenObraPopular {
-    margin: auto;
-}
-
-.contImagenObraPopular img {
-    object-fit: cover;
-    height: 400px;
-}
+/*Contenido 1*/
 
 .contenido1 {
     display: flex;
-    font-size: 30px;
-    justify-content: right;
-    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    padding: 40px 0 70px 0;
 }
 
 .texto1 {
     width: 500px;
+    font-size: 30px;
     text-align: justify;
-    margin-right: 20%;
+    margin: auto;
+}
+
+.imgcontent1 {
+    margin: auto;
+}
+
+.imgcontent1 img {
+    width: 600px;
+}
+
+/*Contenido 2*/
+
+.contenido2 {
+    display: grid;
+    padding: 40px 0 70px 0;
+    color: white;
+}
+
+.texto2 {
+    width: 70%;
+    font-size: 30px;
+    text-align: justify;
+    margin: auto;
+}
+
+.texto3 {
+    width: 70%;
+    font-size: 30px;
+    text-align: justify;
+    margin: auto;
+}
+
+.botonLlevarGeneros {
+    display: flex;
+    margin: 80px auto;
+    
+}
+.diseñoBoton{
+    font-size: 50px;
+    background-color: rgb(245, 190, 41);
+    padding: 10px 60px;
+    border-radius: 5px;
+}
+.diseñoBoton a{
+    font-family: 'Agbalumo', serif;
+    text-decoration: none;
+    color: rgb(138, 17, 17);
 }

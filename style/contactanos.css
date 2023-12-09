@@ -1,7 +1,19 @@
+main{
+    background-color:antiquewhite
+}
 .contTituloContact {
+    padding: 100px 0;
     display: grid;
 }
 
+.contTituloContact h1{
+    font-size: 80px;
+    color: rgb(206, 66, 66);
+}
+
+.Conocenos{
+    margin: auto;
+}
 .tituloContact h1 {
     width: 100%;
     color: rgb(133, 24, 16)
@@ -13,21 +25,27 @@
 }
 
 .imgContact img {
-    width: 90%;
-    height: 400px;
+    height: 600px;
 }
+
 
 .contContenidoContact {
     display: flex;
+    font-size: 25px;
     width: 90%;
     align-items: center;
-    justify-content: center;
-    margin: 30px auto;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: justify;
+}
+
+.contContenidoContact img{
+    height: 400px;
 }
 
 .contenidoContact {
     width: 500px;
     margin: auto 40px;
-    text-align: left;
 }
 

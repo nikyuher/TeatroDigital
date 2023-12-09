@@ -1,3 +1,7 @@
+main{
+    background-color: rgb(55, 55, 117);
+    color: white;
+}   
 /*Contenedor de Titulo e Imagen */
 .contTituloGeneroSelec {
     display: grid;
@@ -5,7 +9,7 @@
 
 .tituloGeneroSelec h1 {
     width: 100%;
-    color: rgb(133, 24, 16)
+    color: rgb(255, 60, 60);
 }
 
 .imgGeneroSelec {

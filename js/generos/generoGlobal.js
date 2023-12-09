@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const obraDiv = $(`<div class="cajaGenero" data-nombre="${obra.nombre}">`);
                 obraDiv.html(`
                 <a href="comprar.html">
-                <img src="../imagenes/${obra.imagen}" alt="${obra.nombre}">
+                <img src="../imagenes/obras/${obra.imagen}" alt="${obra.nombre}">
                 <p>${obra.nombre}</p>
                 <p>${obra.descripcion}</p>
                 <p>Precio: € ${obra.precio}</p>

@@ -1,10 +1,14 @@
+main{
+    background-color: rgb(55, 55, 117);
+    color: white;
+}
 .contenedorTituloEstrenos {
     display: grid;
 }
 
 .titulo h1{
     width: 100%;
-    color: rgb(133, 24, 16)
+    color: rgb(255, 60, 60);
 }
 
 .imagenProxEstrenos {
@@ -30,6 +34,7 @@
     text-align: justify;
     align-items: center;
     flex-wrap: wrap;
+    color: black;
     width: 300px;
     height: 400px;
     border: black solid 1px;
