@@ -12,6 +12,15 @@ app.use(cors());
 // Almacén temporal 
 const usuarios = [];
 const obrasTeatros = [];
+const reservasUsuario = [];
+
+/*
++----------------------------+
+|                            |
+| Api Crear e Iniciar Cuenta | 
++----------------------------+
+
+*/
 
 // Registrar un nuevo usuario
 app.post('/api/registro', (req, res) => {
@@ -39,6 +48,15 @@ app.post('/api/login', (req, res) => {
         res.json({ mensaje: 'Credenciales Incorrectas' });
     }
 });
+
+/*
+
++----------------------------+
+|                            |
+|    Api Obras de Teatro     | 
++----------------------------+
+
+*/
 
 //Obras Teatro Anadir
 app.post('/api/obrasTeatro/anadir', (req, res) => {
@@ -86,6 +104,57 @@ app.get('/api/obrasTeatro/nombre/:nombre', (req, res) => {
     }
 });
 
+/*
+
++----------------------------+
+|                            |
+|     Api Reserva Obra       | 
++----------------------------+
+
+*/
+
+//Realizar Reservas
+app.post('/api/reservas/comprar', (req, res) => {
+    const { usuario, obra, asiento, precio } = req.body;
+
+    const Usuario = usuarios.find(u => u.nombre === usuario);
+
+    if (Usuario) {
+        const verificar = reservasUsuario.find(u => u.obra === obra && u.asiento === asiento);
+
+        if (verificar) {
+            res.json({ mensaje: 'Ese asiento ya esta reservado' });
+        } else {
+            reservasUsuario.push({ usuario, obra, asiento, precio });
+            res.json({ mensaje: 'Reserva realizada' });
+        }
+    } else {
+        res.json({ mensaje: 'No has Iniciado Sesion' });
+    }
+
+});
+
+
+//Realizar Reservas
+app.get('/api/reservas/nombre/:usuario', (req, res) => {
+    const usuario = req.params.usuario;
+
+    const Usuario = reservasUsuario.find(u => u.usuario === usuario);
+
+    if (Usuario) {
+        res.json({
+            usuario: Usuario.usuario,
+            obra: Usuario.obra,
+            asiento: Usuario.asiento,
+            precio: Usuario.precio
+        });
+    } else {
+        res.json({ mensaje: `No existe el usuario ${usuario}` });
+    }
+
+});
+
+
 //Mostrar Obras Teatro
 app.get('/api/obrasTeatro', (req, res) => {
     res.json({ obrasTeatros });
@@ -94,6 +163,11 @@ app.get('/api/obrasTeatro', (req, res) => {
 // Agrega esta ruta después de las rutas existentes
 app.get('/api/usuarios', (req, res) => {
     res.json({ usuarios });
+});
+
+//Mostrar Reservas
+app.get('/api/reservas', (req, res) => {
+    res.json({ reservasUsuario });
 });
 
 //Muestra los usuarios creados

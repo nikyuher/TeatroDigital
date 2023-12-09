@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    /*Busca en todos los section que tengan caracteristicas señaladas*/
     $('section').each(function () {
 
         const contenedorGeneros = $(this).find('.contenedorGeneros');
         const genero = $(this).find('[data-genero]').data('genero');
 
+
         obtenerObrasPorGenero(genero, contenedorGeneros);
     });
 
-
+    /*Ajax para mostrar las obras por su genero con uso de la api*/
     function obtenerObrasPorGenero(genero, resultadoDiv) {
-        
+
         $.ajax({
             url: `http://localhost:3000/api/obrasTeatro/${genero}`,
             type: 'GET',
@@ -24,11 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /*Mostrar las obras*/
     function mostrarObras(data, resultadoDiv) {
 
         resultadoDiv.empty();
-    
+
         if (data.obrasTeatro && data.obrasTeatro.length > 0) {
+            
             data.obrasTeatro.forEach(obra => {
 
                 const obraDiv = $(`<div class="cajaGenero" data-nombre="${obra.nombre}">`);
@@ -38,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <img src="../imagenes/${obra.imagen}" alt="${obra.nombre}">
                     <p>${obra.nombre}</p>
                     <p>${obra.descripcion}</p>
-                    <p>Precio: €${obra.precio}</p>
+                    <p>Precio: € ${obra.precio}</p>
                     </a>
                 `);
                 resultadoDiv.append(obraDiv);
@@ -47,5 +51,5 @@ document.addEventListener('DOMContentLoaded', function () {
             resultadoDiv.text(data.mensaje);
         }
     }
-    
+
 });

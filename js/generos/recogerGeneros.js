@@ -1,22 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    /* Obtiene la clase y data-genero dentro de la clase puesta */
     $('.cargarContenido').click(function (e) {
         e.preventDefault();
-        var genero = $(this).data('genero');
-        var clase = $(this).parent().attr('class');
+        let genero = $(this).data('genero');
+        let clase = $(this).parent().attr('class');
 
-        // Modificar la URL para incluir los parámetros de clase y data-genero
-        var nuevaURL = $(this).attr('href') + '?clase=' + clase + '&genero=' + genero;
+        /* Modifica la URL para incluir los parámetros establecidos */
+        let nuevaURL = $(this).attr('href') + '?clase=' + clase + '&genero=' + genero;
 
-        // Redirigir a la nueva URL
+        /* Redirige a la nueva URL */
         window.location.href = nuevaURL;
     });
 
-    // Verificar si hay parámetros en la URL
-    var params = new URLSearchParams(window.location.search);
-    var clase = params.get('clase');
-    var genero = params.get('genero');
+    /* Verificar si hay parámetros en la URL */
+    let params = new URLSearchParams(window.location.search);
+    let clase = params.get('clase');
+    let genero = params.get('genero');
 
-    // Si hay parámetros, actualizar el contenido del div
+    /* Si hay parámetros, actualizar el contenido del div */
     if (clase && genero) {
         $('.tituloGeneroSelec h1').text(genero);
         $('.contenedorObras').html('<div class="contenedorObras ' + clase + '" data-genero="' + genero + '"><div class="contenedorGeneros"></div></div>');

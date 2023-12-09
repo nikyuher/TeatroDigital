@@ -29,23 +29,3 @@
     object-fit: cover;
     height: 400px;
 }
-
-/*Categoria de Obras*/
-.contCategorias {
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 30px;
-}
-.cajaIndex {
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 300px;
-    height: 400px;
-    border: black solid 1px;
-    border-radius: 10px;
-    padding: 10px;
-    object-fit: cover;
-    background-color: white;
-}
