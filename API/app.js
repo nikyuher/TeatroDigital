@@ -135,24 +135,20 @@ app.post('/api/reservas/comprar', (req, res) => {
 });
 
 
-//Realizar Reservas
-app.get('/api/reservas/nombre/:usuario', (req, res) => {
+// Mostrar reservas de usuario
+app.get('/api/reservas/:usuario', (req, res) => {
     const usuario = req.params.usuario;
 
-    const Usuario = reservasUsuario.find(u => u.usuario === usuario);
+    const reservasDelUsuario = reservasUsuario.filter(u => u.usuario === usuario);
 
-    if (Usuario) {
-        res.json({
-            usuario: Usuario.usuario,
-            obra: Usuario.obra,
-            asiento: Usuario.asiento,
-            precio: Usuario.precio
-        });
+    if (reservasDelUsuario.length > 0) {
+        res.json({ reservasUsuario: reservasDelUsuario });
     } else {
-        res.json({ mensaje: `No existe el usuario ${usuario}` });
+        res.json({ mensaje: `No existen reservas para el usuario ${usuario}` });
     }
-
 });
+
+
 
 
 //Mostrar Obras Teatro

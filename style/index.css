@@ -17,7 +17,8 @@
     width: 450px;
     margin: auto;
 }
-.descriPopular p{
+
+.descriPopular p {
     font-size: 20px;
 }
 
@@ -28,4 +29,17 @@
 .contImagenObraPopular img {
     object-fit: cover;
     height: 400px;
+}
+
+.contenido1 {
+    display: flex;
+    font-size: 30px;
+    justify-content: right;
+    align-items: center;
+}
+
+.texto1 {
+    width: 500px;
+    text-align: justify;
+    margin-right: 20%;
 }

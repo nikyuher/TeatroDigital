@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Realizar la solicitud al servidor
         $.ajax({
             url: 'http://localhost:3000/api/reservas/comprar',
-            method: 'POST',
+            type: 'POST',
+            dataType:'json',
             data: { usuario, obra, asiento, precio },
             success: function (response) {
                 if (response.mensaje === 'Reserva realizada') {

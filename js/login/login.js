@@ -12,7 +12,6 @@ $(document).ready(function () {
         wrapper.classList.remove('active');
     });
 
-    // Manejar el envío del formulario de registro
     $('#formulario').on('submit', function (e) {
         e.preventDefault();
 
@@ -23,14 +22,16 @@ $(document).ready(function () {
         $.ajax({
             url: 'http://localhost:3000/api/registro',
             type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ nombre, contrasena }),
+            dataType: 'json',
+            data: { nombre, contrasena },
             success: function (data) {
                 console.log(data);
-                $('#respuesta').text(data.mensaje);
 
-                if (data.mensaje === 'Registro exitoso') {
-                    window.location.href = 'login.html';
+                if (data.mensaje === 'Registro Exitoso') {
+                    $('#respuesta').text(data.mensaje);
+                    window.location.reload();
+                } else {
+                    $('#respuesta').text(data.mensaje);
                 }
             },
             error: function (error) {
@@ -50,20 +51,18 @@ $(document).ready(function () {
         $.ajax({
             url: 'http://localhost:3000/api/login',
             type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ nombre: nombre2, contrasena: contrasena2 }),
+            dataType: 'json',
+            data: { nombre: nombre2, contrasena: contrasena2 },
             success: function (data) {
 
                 console.log(data);
 
-                $('#respuesta2').text(data.mensaje);
 
                 if (data.mensaje === 'Inicio de sesión exitoso') {
-
                     sessionStorage.setItem('nombreUsuario', data.nombre);
-
                     window.location.href = '../Index.html';
-                    
+                } else {
+                    $('#respuesta2').text(data.mensaje);
                 }
             },
             error: function (error) {
