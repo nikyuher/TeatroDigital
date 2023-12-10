@@ -173,5 +173,5 @@ app.get('/', (req, res) => {
 
 // Inicia el servidor
 app.listen(port, () => {
-    console.log(`Servidor lanzado en http://localhost:${port}`);
+    console.log(`API lanzada en http://localhost:${port}`);
 });
